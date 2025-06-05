@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chat-Moodle-Joomla
 
-## Getting Started
+## Tabla de Contenidos
 
-First, run the development server:
+- [Características](#características)
+- [Estructura](#estructura)
+- [Despliegue](#despliegue)
+- [Integración](#integración)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Características
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Interfaz de chat moderna** con mensajes en tiempo real
+- **Selección de avatar** personalizable
+- **Funciones de accesibilidad**:
+  - Dictado por voz 🎤
+  - Lectura de respuestas 📢
+- **Integración simple** con Moodle y Joomla
+- **Dockerizado** para fácil despliegue 🐳
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estructura
+chat-moodle-joomla/
+├── public/ #recursos de avatares
+├── src/
+│ ├── app/
+│ │ ├── admin/ # Docs de integración
+│ │ └── page.jsx # Punto de entrada
+│ ├── components/
+│ │ ├── avatar-panel-selector/ # Selector de avatares
+│ │ ├── chat-container/ # Contenedor principal
+│ │ ├── chat-controls/ # Controles (voz, etc.)
+│ │ ├── chat-header/ # Cabecera con logo
+│ │ ├── chat-input-form/ # Formulario de mensaje
+│ │ └── chat-messages/ # Historial de chat
+│ └── css/
+│ └── chat.css # Estilos personalizados para los botones de chat-controls y animacion de respuesta del chat
+├── Dockerfile 
+└── docker-compose.yml
 
-## Learn More
+##  Despliegue
+Construye y ejecuta con Docker:
+docker-compose up --build
 
-To learn more about Next.js, take a look at the following resources:
+##  Integración
+Para Moodle:
+Seguir los pasos para construir el plugin en /app/admin
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Instalar en Moodle via panel de administración
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Activar el módulo
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para Joomla:
+Seguir los pasos en /app/admin para construir el Componentes > Chat-Moodle-Joomla

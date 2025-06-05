@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+.bot-unad_chat-bubble {
+  background-color: #eff6ff ;
+  padding: 12px 28px;
+  border-radius: 20px;
+  border-bottom-left-radius: 2px;
+  width: 100px;
+  margin-top: 8px; 
+}
+
+.typing {
+  position: relative;
+  align-items: center;
+  display: flex;
+  height: 17px;
+  bottom: 2px;
+}
+
+.typing .dot {
+  animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
+  background-color: #bbbbbb;
+  height: 9px;
+  margin-right: 4px;
+  width: 9px;
+  display: block;
+  border-radius: 50%;
+}
+.typing .dot:nth-child(1) {
+  animation-delay: 200ms;
+}
+.typing .dot:nth-child(2) {
+  animation-delay: 300ms;
+}
+.typing .dot:nth-child(3) {
+  animation-delay: 400ms;
+}
+.typing .dot:last-child {
+  margin-right: 0;
+}
+.bot-unad--mini-avatar:focus {
+  box-shadow: none;
+}
+@keyframes mercuryTypingAnimation {
+  0% {
+    transform: translateY(0px);
+    background-color: #6e7170;
+  }
+  28% {
+    transform: translateY(-7px);
+    background-color: #a7acaa;
+  }
+  44% {
+    transform: translateY(0px);
+    background-color: #b5bebb;
+  }
+}
+
+.icon-bot {
+  background-color: #fcaa06;
+  height: 36px;
+  width: 36px;
+  padding: 6px;
+  margin: 2px 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px !important;
+}
+
+.icon-bot-select {
+  background-color: #0ef23f;
+  border: 2px solid #000;
+  height: 36px;
+  width: 36px;
+  padding: 6px;
+  margin: 2px 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px !important;
+}
+
+.icon-bot:hover {
+  transition: 0.3s;
+  background-color: #fac459;
+}
+
+.icon-bot-send {
+  background-color: #0ef23f;
+  position: absolute;
+  right: 3%;
+  bottom: 10%;
+}
